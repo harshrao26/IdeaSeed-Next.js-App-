@@ -12,7 +12,7 @@ const SearchForm = ({ query }: { query?: string }) => {
       <input
         type="text"
         name="query"
-        className="w-full  focus:outline-none border-0"
+        className="w-full focus:outline-none border-0 text-sm"
         placeholder="Search Startups"
       />
 

@@ -19,7 +19,7 @@ const Navbar = async () => {
                 </span>
               </Link>
 
-              <Link href={`/user/${session}`}>
+              <Link href={`/user`}>
                 <span className="border-2 text-sm px-2 py-2 border-black rounded-md">
                   Hello! {session.user.name} 👋
                 </span>
