@@ -1,5 +1,6 @@
 import React from "react";
 import SearchForm from "@/app/components/SearchForm";
+import StartupCard from "../components/StartupCard";
 
 const Home = async ({
   searchParams,
@@ -10,9 +11,9 @@ const Home = async ({
 
   const posts = [
     {
-      _createdAt: "Yesterday",
+      _createdAt: new Date(),
       views: 60,
-      author: { _id: 1 },
+      author: { _id: 1, name: "Harsh " },
       _id: 1,
       description: "This is description",
       image:
@@ -37,9 +38,17 @@ const Home = async ({
         <SearchForm query={query} />
       </section>
       <section>
-        <p className="text-2xl font-semibold mt-4 px-8">
+        <p className="text-2xl font-semibold mt-4 px-4">
           {query ? `Search results for "${query}"` : "All Startups"}
         </p>
+
+        <ul>
+          {posts?.length > 0
+            ? posts.map((post: StartupCardType) => {
+                return <StartupCard key={post?._id} post={post} />;
+              })
+            : null}
+        </ul>
       </section>
     </>
   );
